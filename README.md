@@ -49,6 +49,10 @@ module "swagger_ui" {
 }
 ```
 
+Now you can access your swagger docs from `https://<api-id>.execute-api.<region>.amazonaws.com/swagger-ui.html`, this is the same behaviour as with Spring Boot and the Swagger Starter.
+
+In addition you can also use `https://<api-id>.execute-api.<region>.amazonaws.com/swagger-ui`, if you dont want the entrypoint as a top level shortcut you can also set `enable_swagger_ui_entrypoint` to `false`.
+
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
 
