@@ -16,7 +16,7 @@ Serve Swagger documentation right from your API-Gateway.
 
 ## Usage
 
-### HTTP-API with manual endpoint creation
+### HTTP or REST-API with manual endpoint creation
 
 ```hcl
 module "swagger_ui" {
@@ -30,6 +30,10 @@ module "swagger_ui" {
   create_api_endpoints       = false
 }
 ```
+
+In addition you define the endpoints inside your openapi spec.
+
+You can also reuse the output `routes` to get a reference or even generate it in your openapi template.
 
 ### HTTP-API with automatic endpoint creation
 
