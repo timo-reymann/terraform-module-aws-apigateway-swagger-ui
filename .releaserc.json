@@ -1,0 +1,63 @@
+{
+  "branches": [
+    "master",
+    "main"
+  ],
+  "plugins": [
+    [
+      "@semantic-release/commit-analyzer",
+      {
+        "preset": "conventionalcommits"
+      }
+    ],
+    [
+      "@semantic-release/release-notes-generator",
+      {
+        "preset": "conventionalcommits"
+      }
+    ],
+    [
+      "@semantic-release/changelog",
+      {
+        "changelogFile": "CHANGELOG.md"
+      }
+    ],
+    [
+      "@google/semantic-release-replace-plugin",
+      {
+        "replacements": [
+          {
+            "files": [
+              "README.md"
+            ],
+            "from": "terraform-module-aws-apigateway-swagger-ui.git?ref=[0-9.]+",
+            "to": "terraform-module-aws-apigateway-swagger-ui.git?ref=${nextRelease.version}",
+            "results": [
+              {
+                "file": "README.md",
+                "hasChanged": true
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    [
+      "@semantic-release/git",
+      {
+        "assets": [
+          "CHANGELOG.md",
+          "README.md"
+        ]
+      }
+    ],
+    [
+      "@semantic-release/github",
+      {
+        "path": "semantic-release",
+        "name": "timo-reymann/terraform-module-aws-apigateway-swagger-ui"
+      }
+    ]
+  ],
+  "tagFormat": "${version}"
+}

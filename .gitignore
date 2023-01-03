@@ -1,0 +1,6 @@
+node_modules/
+code/dist/
+!code/dist/lambda.zip
+!layer/src/nodejs/node_modules/internal-apigateway-swagger/index.js
+.terraform*
+terraform.tfstate*

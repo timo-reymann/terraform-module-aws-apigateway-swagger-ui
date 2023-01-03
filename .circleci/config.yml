@@ -1,0 +1,18 @@
+version: 2.1
+
+orbs:
+  semantic-release: trustedshops-public/semantic-release@3.1.5
+  node: circleci/node@5.0.3
+
+workflows:
+  version: 2
+  continious:
+    jobs:
+      - semantic-release/with-existing-config:
+          name: semantic-release
+          context:
+            - github-release
+          filters:
+            branches:
+              only:
+                - main

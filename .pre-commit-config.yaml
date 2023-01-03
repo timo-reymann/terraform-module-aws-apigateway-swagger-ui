@@ -1,0 +1,54 @@
+fail_fast: true
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0
+    hooks:
+      - id: check-json
+      - id: check-merge-conflict
+      - id: check-yaml
+      - id: detect-private-key
+      - id: check-symlinks
+      - id: check-vcs-permalinks
+      - id: trailing-whitespace
+        args:
+          - --markdown-linebreak-ext=md
+      - id: mixed-line-ending
+        args:
+          - --fix=lf
+      - id: check-case-conflict
+      - id: check-executables-have-shebangs
+      - id: check-toml
+      - id: check-xml
+      - id: fix-byte-order-marker
+      - id: destroyed-symlinks
+
+  - repo: https://github.com/antonbabenko/pre-commit-terraform
+    rev: v1.77.0
+    hooks:
+      - id: terraform_fmt
+      - id: terraform_validate
+      - id: terraform_tflint
+        exclude: tests/.*
+        args:
+          - '--args=--enable-rule=terraform_unused_declarations'
+          - '--args=--enable-rule=terraform_naming_convention'
+          - '--args=--enable-rule=terraform_deprecated_index'
+          - '--args=--enable-rule=terraform_comment_syntax'
+          - '--args=--enable-rule=terraform_documented_outputs'
+          - '--args=--enable-rule=terraform_documented_variables'
+          - '--args=--enable-rule=terraform_typed_variables'
+          - '--args=--enable-rule=terraform_deprecated_interpolation'
+      - id: terraform_docs
+        args:
+          - --hook-config=--create-file-if-not-exist=true
+  - repo: https://github.com/aquasecurity/tfsec
+    rev: v1.28.1
+    hooks:
+      - id: tfsec
+        args:
+          - '--config-file=.tfsec.yaml'
+          - '--exclude-downloaded-modules'
+  - repo: https://github.com/syntaqx/git-hooks
+    rev: v0.0.17
+    hooks:
+    - id: shellcheck
