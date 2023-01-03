@@ -10,6 +10,7 @@ workflows:
     jobs:
       - semantic-release/with-existing-config:
           name: semantic-release
+          additional_packages: "@google/semantic-release-replace-plugin"
           context:
             - github-release
           filters:
