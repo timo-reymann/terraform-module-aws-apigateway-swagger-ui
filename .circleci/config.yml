@@ -6,7 +6,7 @@ orbs:
 
 workflows:
   version: 2
-  continious:
+  continuous:
     jobs:
       - semantic-release/with-existing-config:
           name: semantic-release
