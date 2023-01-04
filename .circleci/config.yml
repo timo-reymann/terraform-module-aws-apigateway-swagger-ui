@@ -24,6 +24,7 @@ jobs:
       - run:
           name: Run tests
           command: |
+            cd code
             npm run test -- --ci --runInBand --reporters=default --reporters=jest-junit
 
 workflows:
