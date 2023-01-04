@@ -24,10 +24,12 @@ resource "aws_lambda_function" "this" {
 
   environment {
     variables = {
-      SWAGGER_UI_PATH               = "${local.route_serve_prefix}${var.swagger_ui_path}"
-      SWAGGER_SPEC_FILE             = local.openapi_definition_filename
-      SWAGGER_UI_ENTRYPOINT_ENABLED = var.enable_swagger_ui_entrypoint
-      SWAGGER_UI_ENTRYPOINT         = "${local.route_serve_prefix}${var.swagger_ui_entrypoint_path}"
+      SWAGGER_UI_PATH                 = "${local.route_serve_prefix}${var.swagger_ui_path}"
+      SWAGGER_SPEC_FILE               = local.openapi_definition_filename
+      SWAGGER_UI_ENTRYPOINT_ENABLED   = var.enable_swagger_ui_entrypoint
+      SWAGGER_UI_ENTRYPOINT           = "${local.route_serve_prefix}${var.swagger_ui_entrypoint_path}"
+      SWAGGER_CONFIG_ENDPOINT_ENABLED = var.enable_config_endpoint
+      SWAGGER_CONFIG_ENDPOINT_PATH    = "${local.route_serve_prefix}${var.swagger_config_endpoint_path}"
     }
   }
 

@@ -1,6 +1,6 @@
 locals {
   # route keys
-  routes = merge(local.default_routes, local.entrypoint_route)
+  routes = merge(local.default_routes, local.entrypoint_route, local.config_route)
   default_routes = {
     resources = {
       method = "GET"
@@ -15,6 +15,12 @@ locals {
     index_rewrite = {
       method = "GET",
       path   = var.swagger_ui_entrypoint_path
+    }
+  } : {}
+  config_route = var.enable_config_endpoint ? {
+    config = {
+      method = "GET",
+      path   = var.swagger_config_endpoint_path
     }
   } : {}
 }

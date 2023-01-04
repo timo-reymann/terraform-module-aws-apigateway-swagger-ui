@@ -101,6 +101,7 @@ No modules.
 | <a name="input_api_gateway_id"></a> [api\_gateway\_id](#input\_api\_gateway\_id) | ID of the HTTP API-Gateway | `string` | `null` | no |
 | <a name="input_create_api_endpoints"></a> [create\_api\_endpoints](#input\_create\_api\_endpoints) | Set this to false to add the endpoints inside your OpenAPI definition or your own terraform code | `bool` | `true` | no |
 | <a name="input_create_log_group"></a> [create\_log\_group](#input\_create\_log\_group) | Should a log group be created for the lambda | `string` | `true` | no |
+| <a name="input_enable_config_endpoint"></a> [enable\_config\_endpoint](#input\_enable\_config\_endpoint) | Enable config endpoint serving json | `bool` | `true` | no |
 | <a name="input_enable_swagger_ui_entrypoint"></a> [enable\_swagger\_ui\_entrypoint](#input\_enable\_swagger\_ui\_entrypoint) | Enable swagger ui top level page to redirect to the swagger ui path allowing you to share a flat link and be consistent with e.g. Spring Boot apps | `string` | `true` | no |
 | <a name="input_kms_key_arn"></a> [kms\_key\_arn](#input\_kms\_key\_arn) | ARN of the KMS key to use | `string` | `null` | no |
 | <a name="input_log_group_retention_in_days"></a> [log\_group\_retention\_in\_days](#input\_log\_group\_retention\_in\_days) | Amount of days to keep logs | `number` | `3` | no |
@@ -108,6 +109,7 @@ No modules.
 | <a name="input_openapi_definition_format"></a> [openapi\_definition\_format](#input\_openapi\_definition\_format) | Format of definition | `string` | `"yaml"` | no |
 | <a name="input_prefix"></a> [prefix](#input\_prefix) | Prefix to append to all resource names created. If not specified the API-Gateway name is used as prefix | `string` | `null` | no |
 | <a name="input_stage"></a> [stage](#input\_stage) | Name of the stage, when is not $default, the stage is suffixed for the lambda serving to match the path | `string` | `"$default"` | no |
+| <a name="input_swagger_config_endpoint_path"></a> [swagger\_config\_endpoint\_path](#input\_swagger\_config\_endpoint\_path) | Config endpoint to serve swagger json | `string` | `"/swagger-config"` | no |
 | <a name="input_swagger_ui_entrypoint_path"></a> [swagger\_ui\_entrypoint\_path](#input\_swagger\_ui\_entrypoint\_path) | Entrypoint for swagger ui redirect | `string` | `"/swagger-ui.html"` | no |
 | <a name="input_swagger_ui_path"></a> [swagger\_ui\_path](#input\_swagger\_ui\_path) | Base path for swagger ui | `string` | `"/swagger-ui"` | no |
 | <a name="input_tags"></a> [tags](#input\_tags) | Tags to assign to resources created by the module | `map(string)` | `{}` | no |

@@ -12,4 +12,6 @@ const removeXProperties = (definition) => Object.keys(definition).forEach(key =>
     }
 })
 
-module.exports = removeXProperties(apiSpecDocument)
+removeXProperties(apiSpecDocument)
+
+module.exports =  apiSpecDocument
