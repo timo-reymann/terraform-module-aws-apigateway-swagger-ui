@@ -1,41 +1,40 @@
 const express = require('express')
-const serverless = require('serverless-http')
 const swaggerUI = require('swagger-ui-express')
 
-const app = express()
-const path = process.env.SWAGGER_UI_PATH || "/swagger-ui"
-const swaggerUiEntrypoint = process.env.SWAGGER_UI_ENTRYPOINT || "/swagger-ui.html"
-const swaggerUiEntrypointEnabled = process.env.SWAGGER_UI_ENTRYPOINT_ENABLED || true
-const apiSpecFileName = process.env.SWAGGER_SPEC_FILE || "openapi.yaml"
-
-const apiSpecFileContent = require("internal-apigateway-swagger")(apiSpecFileName)
-let apiSpec = null
-
-if(apiSpecFileName.endsWith("json")) {
-  apiSpec = JSON.parse(apiSpecFileContent)
-} else {
-  const YAML = require('yamljs')
-  apiSpec = YAML.parse(apiSpecFileContent)
+// Path configuration
+const pathConfig = {
+    uiPath: process.env.SWAGGER_UI_PATH || "/swagger-ui",
+    entrypoint: {
+        enabled: process.env.SWAGGER_UI_ENTRYPOINT_ENABLED || true,
+        path: process.env.SWAGGER_UI_ENTRYPOINT || "/swagger-ui.html"
+    }
 }
 
-console.log(apiSpec)
+// API Spec loading
+const apiSpecFileName = process.env.SWAGGER_SPEC_FILE || "openapi.yaml"
+const apiSpecFileContent = require("internal-apigateway-swagger")(apiSpecFileName)
+const apiSpecParer = apiSpecFileName.endsWith("json") ? JSON.parse : require('yamljs').parse
+const apiSpecDocument = apiSpecParer(apiSpecFileContent)
+
+// Create express app
+const app = express()
 app.use(
-  path,
-  swaggerUI.serve,
-  swaggerUI.setup(apiSpec, {
-    swaggerOptions: {
-      explorer: true,
-    }
-  })
+    pathConfig.uiPath,
+    swaggerUI.serve,
+    swaggerUI.setup(apiSpecDocument, {
+        swaggerOptions: {
+            explorer: true,
+        }
+    })
 )
 
 // redirect request from entrypoint to nested swagger ui path
-if (swaggerUiEntrypointEnabled) {
-  app.get(swaggerUiEntrypoint, (req, res) => {
-    console.log("Redirect to swagger ui")
-    res.redirect(302, `${path}`)
-    return res;
-  })
+if (pathConfig.entrypoint.enabled) {
+    app.get(pathConfig.entrypoint.path, (req, res) => {
+        res.redirect(302, `${pathConfig.uiPath}`)
+        return res;
+    })
 }
 
-module.exports.handler = serverless(app)
+// Expose express app
+module.exports = app
