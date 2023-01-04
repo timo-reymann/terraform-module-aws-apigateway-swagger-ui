@@ -1,6 +1,7 @@
 locals {
-  function_name = "${local.prefix}-swagger-docs"
-  runtime       = "nodejs18.x"
+  function_name      = "${local.prefix}-swagger-docs"
+  runtime            = "nodejs18.x"
+  route_serve_prefix = var.stage == "$default" ? "" : "/${var.stage}"
 }
 
 #tfsec:ignore:aws-lambda-enable-tracing
@@ -23,10 +24,10 @@ resource "aws_lambda_function" "this" {
 
   environment {
     variables = {
-      SWAGGER_UI_PATH               = var.swagger_ui_path
+      SWAGGER_UI_PATH               = "${local.route_serve_prefix}${var.swagger_ui_path}"
       SWAGGER_SPEC_FILE             = local.openapi_definition_filename
       SWAGGER_UI_ENTRYPOINT_ENABLED = var.enable_swagger_ui_entrypoint
-      SWAGGER_UI_ENTRYPOINT         = var.swagger_ui_entrypoint_path
+      SWAGGER_UI_ENTRYPOINT         = "${local.route_serve_prefix}${var.swagger_ui_entrypoint_path}"
     }
   }
 

@@ -105,6 +105,7 @@ No modules.
 | <a name="input_openapi_definition_content"></a> [openapi\_definition\_content](#input\_openapi\_definition\_content) | Content of openapi definition | `string` | n/a | yes |
 | <a name="input_openapi_definition_format"></a> [openapi\_definition\_format](#input\_openapi\_definition\_format) | Format of definition | `string` | `"yaml"` | no |
 | <a name="input_prefix"></a> [prefix](#input\_prefix) | Prefix to append to all resource names created. If not specified the API-Gateway name is used as prefix | `string` | `null` | no |
+| <a name="input_stage"></a> [stage](#input\_stage) | Name of the stage, when is not $default, the stage is suffixed for the lambda serving to match the path | `string` | `"$default"` | no |
 | <a name="input_swagger_ui_entrypoint_path"></a> [swagger\_ui\_entrypoint\_path](#input\_swagger\_ui\_entrypoint\_path) | Entrypoint for swagger ui redirect | `string` | `"/swagger-ui.html"` | no |
 | <a name="input_swagger_ui_path"></a> [swagger\_ui\_path](#input\_swagger\_ui\_path) | Base path for swagger ui | `string` | `"/swagger-ui"` | no |
 | <a name="input_tags"></a> [tags](#input\_tags) | Tags to assign to resources created by the module | `map(string)` | `{}` | no |

@@ -16,6 +16,12 @@ variable "prefix" {
   default     = null
 }
 
+variable "stage" {
+  description = "Name of the stage, when is not $default, the stage is suffixed for the lambda serving to match the path"
+  type        = string
+  default     = "$default"
+}
+
 variable "enable_swagger_ui_entrypoint" {
   description = "Enable swagger ui top level page to redirect to the swagger ui path allowing you to share a flat link and be consistent with e.g. Spring Boot apps"
   type        = string
