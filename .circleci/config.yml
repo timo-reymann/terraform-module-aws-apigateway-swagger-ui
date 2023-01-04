@@ -20,7 +20,7 @@ jobs:
           name: Build app
           command: |
             cd code
-            npm run build
+            npm run bundle
       - run:
           name: Run tests
           command: |
