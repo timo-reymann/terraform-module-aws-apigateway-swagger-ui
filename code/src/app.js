@@ -1,7 +1,6 @@
 const express = require('express')
 const swaggerUI = require('swagger-ui-express')
 
-// Path configuration
 const pathConfig = {
     uiPath: process.env.SWAGGER_UI_PATH || "/swagger-ui",
     entrypoint: {
@@ -9,12 +8,7 @@ const pathConfig = {
         path: process.env.SWAGGER_UI_ENTRYPOINT || "/swagger-ui.html"
     }
 }
-
-// API Spec loading
-const apiSpecFileName = process.env.SWAGGER_SPEC_FILE || "openapi.yaml"
-const apiSpecFileContent = require("internal-apigateway-swagger")(apiSpecFileName)
-const apiSpecParer = apiSpecFileName.endsWith("json") ? JSON.parse : require('yamljs').parse
-const apiSpecDocument = apiSpecParer(apiSpecFileContent)
+const apiSpecDocument = require("./apispec.js")
 
 // Create express app
 const app = express()
