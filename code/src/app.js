@@ -33,7 +33,7 @@ app.use(
 if (swaggerUiEntrypointEnabled) {
   app.get(swaggerUiEntrypoint, (req, res) => {
     console.log("Redirect to swagger ui")
-    res.redirect(302, `.${path}`)
+    res.redirect(302, `${path}`)
     return res;
   })
 }
