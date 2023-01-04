@@ -22,13 +22,11 @@ No requirements.
 | Name | Type |
 |------|------|
 | [aws_apigatewayv2_api.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/apigatewayv2_api) | resource |
-| [aws_apigatewayv2_stage.default](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/apigatewayv2_stage) | resource |
+| [aws_apigatewayv2_stage.v1](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/apigatewayv2_stage) | resource |
 
 ## Inputs
 
-| Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
-| <a name="input_openapi_file"></a> [openapi\_file](#input\_openapi\_file) | n/a | `string` | `"petstore.json"` | no |
+No inputs.
 
 ## Outputs
 
