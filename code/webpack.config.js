@@ -12,7 +12,7 @@ module.exports = {
         hints: false,
     },
     //    mode: 'production',
-    entry: './src/app.js',
+    entry: './src/lambda.js',
     target: 'node',
     plugins: [
         new CopyWebpackPlugin({

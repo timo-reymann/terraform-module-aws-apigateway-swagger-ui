@@ -8,9 +8,14 @@ workflows:
   version: 2
   continuous:
     jobs:
+      - node/test:
+          name: test-lambda
+          app-dir: code
       - semantic-release/with-existing-config:
           name: semantic-release
           additional_packages: "@google/semantic-release-replace-plugin"
+          requires:
+            - test-lambda
           context:
             - github-release
           filters:
