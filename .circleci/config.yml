@@ -4,13 +4,28 @@ orbs:
   semantic-release: trustedshops-public/semantic-release@3.1.5
   node: circleci/node@5.0.3
 
+jobs:
+  test:
+    executor: node/default
+    steps:
+      - checkout
+      - node/install-packages:
+          app-dir: code
+      - run:
+          name: Build app
+          command: |
+            cd code
+            npm run build
+      - run:
+          name: Run tests
+          command: |
+            npm run test -- --ci --runInBand --reporters=default --reporters=jest-junit
+
 workflows:
   version: 2
   continuous:
     jobs:
-      - node/test:
-          name: test-lambda
-          app-dir: code
+      - test-lambda
       - semantic-release/with-existing-config:
           name: semantic-release
           additional_packages: "@google/semantic-release-replace-plugin"
