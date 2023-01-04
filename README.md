@@ -20,7 +20,7 @@ Serve Swagger documentation right from your API-Gateway.
 
 ```hcl
 module "swagger_ui" {
-  source  = "git@github.com:timo-reymann/terraform-module-aws-apigateway-swagger-ui.git?ref=1.1.0"
+  source  = "git@github.com:timo-reymann/terraform-module-aws-apigateway-swagger-ui.git?ref=1.1.1"
   prefix                     = "my-api-service"
   openapi_definition_content = file("my-definition.yml")
   openapi_definition_format  = "yaml"
@@ -39,7 +39,7 @@ You can also reuse the output `routes` to get a reference or even generate it in
 
 ```hcl
 module "swagger_ui" {
-  source  = "git@github.com:timo-reymann/terraform-module-aws-apigateway-swagger-ui.git?ref=1.1.0"
+  source  = "git@github.com:timo-reymann/terraform-module-aws-apigateway-swagger-ui.git?ref=1.1.1"
   prefix                     = "my-api-service"
   openapi_definition_content = file("my-definition.yml")
   openapi_definition_format  = "yaml"
