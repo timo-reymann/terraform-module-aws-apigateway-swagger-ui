@@ -26,6 +26,10 @@ jobs:
           command: |
             cd code
             npm run test -- --ci --runInBand --reporters=default --reporters=jest-junit
+          environment:
+            JEST_JUNIT_OUTPUT_DIR: ./reports/
+      - store_test_results:
+          path: ./reports/
 
 workflows:
   version: 2
