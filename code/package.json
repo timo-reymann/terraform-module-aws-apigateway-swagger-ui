@@ -17,7 +17,7 @@
     "bundle": "webpack --config webpack.config.js",
     "zip": "cd dist && deterministic-zip -r lambda.zip *",
     "clean": "rm -rf dist/ || true && mkdir dist/",
-    "build": "curl -sS https://raw.githubusercontent.com/timo-reymann/rind/1.1.1/core/rind | bash -s - --runtime cimg/node:18.11 --main-cmd \"npm run bundle && npm run zip\" --setup-cmd \"bash <(curl -sS https://raw.githubusercontent.com/timo-reymann/deterministic-zip/main/installer) && npm run clean && npm install\" --artifacts \"dist/\" --log-level DEBUG"
+    "build": "curl -sS https://raw.githubusercontent.com/timo-reymann/rind/1.1.1/core/rind | bash -s - --runtime cimg/node:18.11 --main-cmd \"npm run bundle && npm run zip\" --setup-cmd \"curl -sS https://raw.githubusercontent.com/timo-reymann/deterministic-zip/main/installer | bash && npm run clean && npm install\" --artifacts \"dist/\" --log-level DEBUG"
   },
   "jest": {
     "roots": [
