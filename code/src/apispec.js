@@ -3,4 +3,13 @@ const apiSpecFileContent = require("internal-apigateway-swagger")(apiSpecFileNam
 const apiSpecParer = apiSpecFileName.endsWith("json") ? JSON.parse : require('yamljs').parse
 const apiSpecDocument = apiSpecParer(apiSpecFileContent)
 
-module.exports = apiSpecDocument
+const removeXProperties = (definition) => Object.keys(definition).forEach(key => {
+    const nestedProperty = definition[key];
+    if (key.startsWith("x-")) {
+        delete definition[key]
+    } else if (typeof nestedProperty === 'object') {
+        removeXProperties(nestedProperty);
+    }
+})
+
+module.exports = removeXProperties(apiSpecDocument)
