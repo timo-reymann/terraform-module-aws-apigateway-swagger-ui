@@ -49,25 +49,28 @@ module "swagger_ui" {
 }
 ```
 
-Now you can access your swagger docs from `https://<api-id>.execute-api.<region>.amazonaws.com/swagger-ui.html`, this is the same behaviour as with Spring Boot and the Swagger Starter.
+Now you can access your swagger docs from `https://<api-id>.execute-api.<region>.amazonaws.com/swagger-ui.html`, this is
+the same behaviour as with Spring Boot and the Swagger Starter.
 
-In addition you can also use `https://<api-id>.execute-api.<region>.amazonaws.com/swagger-ui`, if you dont want the entrypoint as a top level shortcut you can also set `enable_swagger_ui_entrypoint` to `false`.
+In addition you can also use `https://<api-id>.execute-api.<region>.amazonaws.com/swagger-ui`, if you dont want the
+entrypoint as a top level shortcut you can also set `enable_swagger_ui_entrypoint` to `false`.
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+
 ## Requirements
 
-| Name | Version |
-|------|---------|
+| Name                                                                      | Version  |
+|---------------------------------------------------------------------------|----------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.2.0 |
-| <a name="requirement_archive"></a> [archive](#requirement\_archive) | > 1 |
-| <a name="requirement_aws"></a> [aws](#requirement\_aws) | ~> 4 |
+| <a name="requirement_archive"></a> [archive](#requirement\_archive)       | > 1      |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws)                   | ~> 4     |
 
 ## Providers
 
-| Name | Version |
-|------|---------|
-| <a name="provider_archive"></a> [archive](#provider\_archive) | 2.2.0 |
-| <a name="provider_aws"></a> [aws](#provider\_aws) | 4.48.0 |
+| Name                                                          | Version |
+|---------------------------------------------------------------|---------|
+| <a name="provider_archive"></a> [archive](#provider\_archive) | 2.2.0   |
+| <a name="provider_aws"></a> [aws](#provider\_aws)             | 4.48.0  |
 
 ## Modules
 
@@ -75,60 +78,74 @@ No modules.
 
 ## Resources
 
-| Name | Type |
-|------|------|
-| [aws_apigatewayv2_integration.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/apigatewayv2_integration) | resource |
-| [aws_apigatewayv2_route.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/apigatewayv2_route) | resource |
-| [aws_cloudwatch_log_group.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudwatch_log_group) | resource |
-| [aws_iam_role.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role) | resource |
-| [aws_iam_role_policy.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role_policy) | resource |
-| [aws_lambda_function.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lambda_function) | resource |
-| [aws_lambda_layer_version.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lambda_layer_version) | resource |
-| [aws_lambda_permission.apigateway](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lambda_permission) | resource |
-| [archive_file.layer](https://registry.terraform.io/providers/hashicorp/archive/latest/docs/data-sources/file) | data source |
-| [aws_caller_identity.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/caller_identity) | data source |
+| Name                                                                                                                                      | Type        |
+|-------------------------------------------------------------------------------------------------------------------------------------------|-------------|
+| [aws_apigatewayv2_integration.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/apigatewayv2_integration) | resource    |
+| [aws_apigatewayv2_route.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/apigatewayv2_route)             | resource    |
+| [aws_cloudwatch_log_group.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudwatch_log_group)         | resource    |
+| [aws_iam_role.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role)                                 | resource    |
+| [aws_iam_role_policy.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role_policy)                   | resource    |
+| [aws_lambda_function.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lambda_function)                   | resource    |
+| [aws_lambda_layer_version.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lambda_layer_version)         | resource    |
+| [aws_lambda_permission.apigateway](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lambda_permission)         | resource    |
+| [archive_file.layer](https://registry.terraform.io/providers/hashicorp/archive/latest/docs/data-sources/file)                             | data source |
+| [aws_caller_identity.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/caller_identity)                | data source |
 | [aws_iam_policy_document.assume_role](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/iam_policy_document) | data source |
-| [aws_iam_policy_document.lambda](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/iam_policy_document) | data source |
-| [aws_partition.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/partition) | data source |
-| [aws_region.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/region) | data source |
+| [aws_iam_policy_document.lambda](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/iam_policy_document)      | data source |
+| [aws_partition.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/partition)                            | data source |
+| [aws_region.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/region)                                  | data source |
 
 ## Inputs
 
-| Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
-| <a name="input_api_gateway_id"></a> [api\_gateway\_id](#input\_api\_gateway\_id) | ID of the HTTP API-Gateway | `string` | `null` | no |
-| <a name="input_create_api_endpoints"></a> [create\_api\_endpoints](#input\_create\_api\_endpoints) | Set this to false to add the endpoints inside your OpenAPI definition or your own terraform code | `bool` | `true` | no |
-| <a name="input_create_log_group"></a> [create\_log\_group](#input\_create\_log\_group) | Should a log group be created for the lambda | `string` | `true` | no |
-| <a name="input_enable_swagger_ui_entrypoint"></a> [enable\_swagger\_ui\_entrypoint](#input\_enable\_swagger\_ui\_entrypoint) | Enable swagger ui top level page to redirect to the swagger ui path allowing you to share a flat link and be consistent with e.g. Spring Boot apps | `string` | `true` | no |
-| <a name="input_kms_key_arn"></a> [kms\_key\_arn](#input\_kms\_key\_arn) | ARN of the KMS key to use | `string` | `null` | no |
-| <a name="input_log_group_retention_in_days"></a> [log\_group\_retention\_in\_days](#input\_log\_group\_retention\_in\_days) | Amount of days to keep logs | `number` | `3` | no |
-| <a name="input_openapi_definition_content"></a> [openapi\_definition\_content](#input\_openapi\_definition\_content) | Content of openapi definition | `string` | n/a | yes |
-| <a name="input_openapi_definition_format"></a> [openapi\_definition\_format](#input\_openapi\_definition\_format) | Format of definition | `string` | `"yaml"` | no |
-| <a name="input_prefix"></a> [prefix](#input\_prefix) | Prefix to append to all resource names created. If not specified the API-Gateway name is used as prefix | `string` | `null` | no |
-| <a name="input_stage"></a> [stage](#input\_stage) | Name of the stage, when is not $default, the stage is suffixed for the lambda serving to match the path | `string` | `"$default"` | no |
-| <a name="input_swagger_ui_entrypoint_path"></a> [swagger\_ui\_entrypoint\_path](#input\_swagger\_ui\_entrypoint\_path) | Entrypoint for swagger ui redirect | `string` | `"/swagger-ui.html"` | no |
-| <a name="input_swagger_ui_path"></a> [swagger\_ui\_path](#input\_swagger\_ui\_path) | Base path for swagger ui | `string` | `"/swagger-ui"` | no |
-| <a name="input_tags"></a> [tags](#input\_tags) | Tags to assign to resources created by the module | `map(string)` | `{}` | no |
+| Name                                                                                                                         | Description                                                                                                                                        | Type          | Default              | Required |
+|------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------|---------------|----------------------|:--------:|
+| <a name="input_api_gateway_id"></a> [api\_gateway\_id](#input\_api\_gateway\_id)                                             | ID of the HTTP API-Gateway                                                                                                                         | `string`      | `null`               |    no    |
+| <a name="input_create_api_endpoints"></a> [create\_api\_endpoints](#input\_create\_api\_endpoints)                           | Set this to false to add the endpoints inside your OpenAPI definition or your own terraform code                                                   | `bool`        | `true`               |    no    |
+| <a name="input_create_log_group"></a> [create\_log\_group](#input\_create\_log\_group)                                       | Should a log group be created for the lambda                                                                                                       | `string`      | `true`               |    no    |
+| <a name="input_enable_swagger_ui_entrypoint"></a> [enable\_swagger\_ui\_entrypoint](#input\_enable\_swagger\_ui\_entrypoint) | Enable swagger ui top level page to redirect to the swagger ui path allowing you to share a flat link and be consistent with e.g. Spring Boot apps | `string`      | `true`               |    no    |
+| <a name="input_kms_key_arn"></a> [kms\_key\_arn](#input\_kms\_key\_arn)                                                      | ARN of the KMS key to use                                                                                                                          | `string`      | `null`               |    no    |
+| <a name="input_log_group_retention_in_days"></a> [log\_group\_retention\_in\_days](#input\_log\_group\_retention\_in\_days)  | Amount of days to keep logs                                                                                                                        | `number`      | `3`                  |    no    |
+| <a name="input_openapi_definition_content"></a> [openapi\_definition\_content](#input\_openapi\_definition\_content)         | Content of openapi definition                                                                                                                      | `string`      | n/a                  |   yes    |
+| <a name="input_openapi_definition_format"></a> [openapi\_definition\_format](#input\_openapi\_definition\_format)            | Format of definition                                                                                                                               | `string`      | `"yaml"`             |    no    |
+| <a name="input_prefix"></a> [prefix](#input\_prefix)                                                                         | Prefix to append to all resource names created. If not specified the API-Gateway name is used as prefix                                            | `string`      | `null`               |    no    |
+| <a name="input_stage"></a> [stage](#input\_stage)                                                                            | Name of the stage, when is not $default, the stage is suffixed for the lambda serving to match the path                                            | `string`      | `"$default"`         |    no    |
+| <a name="input_swagger_ui_entrypoint_path"></a> [swagger\_ui\_entrypoint\_path](#input\_swagger\_ui\_entrypoint\_path)       | Entrypoint for swagger ui redirect                                                                                                                 | `string`      | `"/swagger-ui.html"` |    no    |
+| <a name="input_swagger_ui_path"></a> [swagger\_ui\_path](#input\_swagger\_ui\_path)                                          | Base path for swagger ui                                                                                                                           | `string`      | `"/swagger-ui"`      |    no    |
+| <a name="input_tags"></a> [tags](#input\_tags)                                                                               | Tags to assign to resources created by the module                                                                                                  | `map(string)` | `{}`                 |    no    |
 
 ## Outputs
 
-| Name | Description |
-|------|-------------|
-| <a name="output_lambda_execution_arn"></a> [lambda\_execution\_arn](#output\_lambda\_execution\_arn) | Execution ARN for the lambda serving the Swagger UI |
-| <a name="output_log_group_arn"></a> [log\_group\_arn](#output\_log\_group\_arn) | ARN of the log group created for the lambda |
-| <a name="output_routes"></a> [routes](#output\_routes) | Routes that can/should be served by the Swagger UI lambda. If you set `create_routes` to true, you can ignore this |
+| Name                                                                                                 | Description                                                                                                        |
+|------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------|
+| <a name="output_lambda_execution_arn"></a> [lambda\_execution\_arn](#output\_lambda\_execution\_arn) | Execution ARN for the lambda serving the Swagger UI                                                                |
+| <a name="output_log_group_arn"></a> [log\_group\_arn](#output\_log\_group\_arn)                      | ARN of the log group created for the lambda                                                                        |
+| <a name="output_routes"></a> [routes](#output\_routes)                                               | Routes that can/should be served by the Swagger UI lambda. If you set `create_routes` to true, you can ignore this |
+
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
 # Development
 
 ## Run tests
 
+### Terraform Module
+
+> You need go locally installed to run the tests
+
 1. Login to AWS account
 2. Go in `./tests` and run `go test`
 
+### Lambda
+
+> Also runs in CircleCI
+
+1. Go to `./code`
+2. Install dependencies: `npm i`
+3. Run `npm run test`
+
 ## Update lambda zip package
 
-Since the lambda is stored in the repository to reduce complexity you need to build locally and push the updated artifact:
+Since the lambda is stored in the repository to reduce complexity you need to build locally and push the updated
+artifact:
 
 1. Go in `./code`
 2. Build in docker container: `npm run build`
