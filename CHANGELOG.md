@@ -1,3 +1,10 @@
+## [1.2.0](https://github.com/timo-reymann/terraform-module-aws-apigateway-swagger-ui/compare/1.1.1...1.2.0) (2023-01-05)
+
+
+### Features
+
+* **#2:** Add swagger docs endpoint ([#5](https://github.com/timo-reymann/terraform-module-aws-apigateway-swagger-ui/issues/5)) ([f66c691](https://github.com/timo-reymann/terraform-module-aws-apigateway-swagger-ui/commit/f66c6915068746c3bd904bd32bb801a352acd10b)), closes [#2](https://github.com/timo-reymann/terraform-module-aws-apigateway-swagger-ui/issues/2) [#2](https://github.com/timo-reymann/terraform-module-aws-apigateway-swagger-ui/issues/2)
+
 ## [1.1.1](https://github.com/timo-reymann/terraform-module-aws-apigateway-swagger-ui/compare/1.1.0...1.1.1) (2023-01-04)
 
 
