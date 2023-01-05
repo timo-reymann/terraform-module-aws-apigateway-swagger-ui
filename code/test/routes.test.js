@@ -20,4 +20,11 @@ describe("assets", () => {
             .get("/")
         expect(res.statusCode).toBe(404)
     })
+
+    it("should returnjson for config", async () => {
+        const res = await request(app)
+            .get("/swagger-config")
+        expect(res.statusCode).toBe(200)
+        expect(res.body.version).toBe("1.0.0")
+    })
 })

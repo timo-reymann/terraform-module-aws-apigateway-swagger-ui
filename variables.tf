@@ -22,6 +22,18 @@ variable "stage" {
   default     = "$default"
 }
 
+variable "enable_config_endpoint" {
+  description = "Enable config endpoint serving json"
+  type        = bool
+  default     = true
+}
+
+variable "swagger_config_endpoint_path" {
+  description = "Config endpoint to serve swagger json"
+  type        = string
+  default     = "/swagger-config"
+}
+
 variable "enable_swagger_ui_entrypoint" {
   description = "Enable swagger ui top level page to redirect to the swagger ui path allowing you to share a flat link and be consistent with e.g. Spring Boot apps"
   type        = string

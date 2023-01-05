@@ -10,7 +10,7 @@ import (
 )
 
 func doHttpTestCall(t *testing.T, invoke_url string, status int, headers map[string]string) {
-	http_helper.HTTPDoWithRetry(t, "GET", invoke_url, []byte{}, headers, status, 10, 10*time.Second, &tls.Config{})
+	http_helper.HTTPDoWithRetry(t, "GET", invoke_url, []byte{}, headers, status, 3, 5*time.Second, &tls.Config{})
 }
 
 func testSwaggerEndpoints(t *testing.T, terraformOptions *terraform.Options, prefix string) {
@@ -19,4 +19,5 @@ func testSwaggerEndpoints(t *testing.T, terraformOptions *terraform.Options, pre
 	doHttpTestCall(t, base_url, 200, map[string]string{})
 	doHttpTestCall(t, base_url+"/swagger-ui.html", 200, map[string]string{})
 	doHttpTestCall(t, base_url+"/swagger-ui.css", 200, map[string]string{})
+	doHttpTestCall(t, invoke_url+prefix+"/swagger-config", 200, map[string]string{})
 }
