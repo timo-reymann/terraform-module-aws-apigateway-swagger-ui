@@ -31,7 +31,7 @@
               "README.md"
             ],
             "from": "version = \"[0-9.]+\"",
-            "to": "version =\"${nextRelease.version}\"",
+            "to": "version = \"${nextRelease.version}\"",
             "results": [
               {
                 "file": "README.md",
