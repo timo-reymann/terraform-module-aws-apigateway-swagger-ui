@@ -8,7 +8,7 @@ import (
 
 func TestRoutesJSON(t *testing.T) {
 	terraformOptions := terraform.WithDefaultRetryableErrors(t, &terraform.Options{
-		TerraformDir: "http-routes-json",
+		TerraformDir: "../examples/http-routes-json",
 		Vars:         map[string]interface{}{},
 	})
 
@@ -22,7 +22,7 @@ func TestRoutesJSON(t *testing.T) {
 
 func TestRoutesJSONUpdateIdempotent(t *testing.T) {
 	terraformOptions := terraform.WithDefaultRetryableErrors(t, &terraform.Options{
-		TerraformDir: "http-routes-json",
+		TerraformDir: "../examples/http-routes-json",
 		Vars:         map[string]interface{}{},
 	})
 	terraformOptionsUpdate := terraform.WithDefaultRetryableErrors(t, &terraform.Options{
@@ -46,7 +46,7 @@ func TestRoutesJSONUpdateIdempotent(t *testing.T) {
 
 func TestRoutesJSONWithStage(t *testing.T) {
 	terraformOptions := terraform.WithDefaultRetryableErrors(t, &terraform.Options{
-		TerraformDir: "http-routes-json-with-stage",
+		TerraformDir: "../examples/http-routes-json-with-stage",
 		Vars:         map[string]interface{}{},
 	})
 

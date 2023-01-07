@@ -8,7 +8,7 @@ import (
 
 func TestNoRoutesYAML(t *testing.T) {
 	terraformOptions := terraform.WithDefaultRetryableErrors(t, &terraform.Options{
-		TerraformDir: "http-no-routes-yaml",
+		TerraformDir: "../examples/http-no-routes-yaml",
 		Vars:         map[string]interface{}{},
 	})
 
@@ -19,7 +19,7 @@ func TestNoRoutesYAML(t *testing.T) {
 
 func TestNoRoutesJSON(t *testing.T) {
 	terraformOptions := terraform.WithDefaultRetryableErrors(t, &terraform.Options{
-		TerraformDir: "http-no-routes-json",
+		TerraformDir: "../examples/http-no-routes-json",
 		Vars:         map[string]interface{}{},
 	})
 
