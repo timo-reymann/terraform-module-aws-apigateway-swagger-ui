@@ -30,8 +30,8 @@
             "files": [
               "README.md"
             ],
-            "from": "terraform-module-aws-apigateway-swagger-ui.git\\?ref=[0-9.]+",
-            "to": "terraform-module-aws-apigateway-swagger-ui.git?ref=${nextRelease.version}",
+            "from": "version = \"[0-9.]+\"",
+            "to": "version =\"${nextRelease.version}\"",
             "results": [
               {
                 "file": "README.md",
