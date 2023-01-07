@@ -1,3 +1,10 @@
+## [1.3.0](https://github.com/timo-reymann/terraform-module-aws-apigateway-swagger-ui/compare/1.2.0...1.3.0) (2023-01-07)
+
+
+### Features
+
+* Add module to terraform registry ([0bd5308](https://github.com/timo-reymann/terraform-module-aws-apigateway-swagger-ui/commit/0bd53087703a835bed09d5b3eff3647a710dd078))
+
 ## [1.2.0](https://github.com/timo-reymann/terraform-module-aws-apigateway-swagger-ui/compare/1.1.1...1.2.0) (2023-01-05)
 
 
