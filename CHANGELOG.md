@@ -1,3 +1,10 @@
+## [1.3.1](https://github.com/timo-reymann/terraform-module-aws-apigateway-swagger-ui/compare/1.3.0...1.3.1) (2023-01-07)
+
+
+### Bug Fixes
+
+* Fix url for module in README ([7c6747f](https://github.com/timo-reymann/terraform-module-aws-apigateway-swagger-ui/commit/7c6747f882a933d0bf5a1724e2e453df4eb1597c))
+
 ## [1.3.0](https://github.com/timo-reymann/terraform-module-aws-apigateway-swagger-ui/compare/1.2.0...1.3.0) (2023-01-07)
 
 
