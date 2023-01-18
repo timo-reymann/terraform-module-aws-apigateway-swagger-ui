@@ -2,7 +2,7 @@ version: 2.1
 
 orbs:
   semantic-release: trustedshops-public/semantic-release@3.1.5
-  node: circleci/node@5.0.3
+  node: circleci/node@5.1.0
 
 executors:
   nodejs:
