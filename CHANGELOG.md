@@ -1,3 +1,10 @@
+## [1.4.0](https://github.com/timo-reymann/terraform-module-aws-apigateway-swagger-ui/compare/1.3.1...1.4.0) (2023-02-18)
+
+
+### Features
+
+* Restructure README ([e7f0326](https://github.com/timo-reymann/terraform-module-aws-apigateway-swagger-ui/commit/e7f0326bc1479fbe8ff0d72080bea5f947547353))
+
 ## [1.3.1](https://github.com/timo-reymann/terraform-module-aws-apigateway-swagger-ui/compare/1.3.0...1.3.1) (2023-01-07)
 
 
