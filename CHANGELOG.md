@@ -1,3 +1,11 @@
+## [1.4.1](https://github.com/timo-reymann/terraform-module-aws-apigateway-swagger-ui/compare/1.4.0...1.4.1) (2023-05-02)
+
+
+### Bug Fixes
+
+* **deps:** update dependency serverless-http to v3.2.0 ([#16](https://github.com/timo-reymann/terraform-module-aws-apigateway-swagger-ui/issues/16)) ([e796a90](https://github.com/timo-reymann/terraform-module-aws-apigateway-swagger-ui/commit/e796a900b89fdae0d6aa3a3c737fe02aa16fb0ed))
+* **deps:** update dependency swagger-ui-express to v4.6.2 ([#14](https://github.com/timo-reymann/terraform-module-aws-apigateway-swagger-ui/issues/14)) ([5489efd](https://github.com/timo-reymann/terraform-module-aws-apigateway-swagger-ui/commit/5489efd870c95017e67dff98bae6406590b08227))
+
 ## [1.4.0](https://github.com/timo-reymann/terraform-module-aws-apigateway-swagger-ui/compare/1.3.1...1.4.0) (2023-02-18)
 
 
