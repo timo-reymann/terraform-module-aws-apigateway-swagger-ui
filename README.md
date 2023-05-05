@@ -17,7 +17,7 @@ Serve Swagger documentation right from your API-Gateway.
 ```hcl
 module "swagger_ui" {
   source  = "timo-reymann/terraform-module-aws-apigateway-swagger-ui"
-  version = "1.4.1"
+  version = "1.4.2"
 
   prefix                     = "my-api-service"
   openapi_definition_content = file("my-definition.yml")
@@ -38,7 +38,7 @@ You can also reuse the output `routes` to get a reference or even generate it in
 ```hcl
 module "swagger_ui" {
   source  = "timo-reymann/terraform-module-aws-apigateway-swagger-ui"
-  version = "1.4.1"
+  version = "1.4.2"
 
   prefix                     = "my-api-service"
   openapi_definition_content = file("my-definition.yml")
