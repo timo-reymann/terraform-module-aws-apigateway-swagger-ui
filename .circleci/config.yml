@@ -3,6 +3,7 @@ version: 2.1
 orbs:
   semantic-release: trustedshops-public/semantic-release@5.0.0
   node: circleci/node@5.1.0
+  deterministic-zip: timo-reymann/deterministic-zip@1.0.0
 
 executors:
   nodejs:
@@ -40,6 +41,7 @@ jobs:
           additional_packages: >
             @google/semantic-release-replace-plugin@1.2.0
             @semantic-release/exec@6.0.3
+      - deterministic-zip/install
       - run:
           name: Package zip file for lambda
           command: |
