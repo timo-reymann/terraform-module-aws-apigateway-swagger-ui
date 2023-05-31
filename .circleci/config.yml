@@ -36,7 +36,7 @@ workflows:
   continuous:
     jobs:
       - test-lambda
-      - semantic-release/with-existing-config:
+      - semantic-release/with_existing_config:
           name: semantic-release
           additional_packages: "@google/semantic-release-replace-plugin"
           requires:
