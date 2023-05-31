@@ -1,3 +1,10 @@
+## [1.5.0](https://github.com/timo-reymann/terraform-module-aws-apigateway-swagger-ui/compare/1.4.2...1.5.0) (2023-05-31)
+
+
+### Features
+
+* Add lambda zip archive to semantic-release ([c5f5e13](https://github.com/timo-reymann/terraform-module-aws-apigateway-swagger-ui/commit/c5f5e13503c7011d47fcbd13b5b9c6471511a7aa))
+
 ## [1.4.2](https://github.com/timo-reymann/terraform-module-aws-apigateway-swagger-ui/compare/1.4.1...1.4.2) (2023-05-05)
 
 
