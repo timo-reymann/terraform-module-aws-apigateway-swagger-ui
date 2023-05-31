@@ -30,17 +30,35 @@ jobs:
             JEST_JUNIT_OUTPUT_DIR: ./reports/
       - store_test_results:
           path: ./code/reports/
+  build-lambda:
+    executor: nodejs
+    steps:
+      - checkout
+      - node/install-packages:
+          app-dir: code
+      - run:
+          name: Create lambda archive
+          command: |
+            cd code/
+            npm run build
+      - persist_to_workspace:
+          root: code/
+          paths:
+            - dist/
 
 workflows:
   version: 2
   continuous:
     jobs:
       - test-lambda
+      - build-lambda:
+          requires:
+            - test-lambda
       - semantic-release/with_existing_config:
           name: semantic-release
           additional_packages: "@google/semantic-release-replace-plugin"
           requires:
-            - test-lambda
+            - build-lambda
           context:
             - github-release
           filters:
