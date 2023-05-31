@@ -47,7 +47,8 @@
       {
         "assets": [
           "CHANGELOG.md",
-          "README.md"
+          "README.md",
+          "code/dist/lambda.zip"
         ]
       }
     ],
