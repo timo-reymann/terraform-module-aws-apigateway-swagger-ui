@@ -8,7 +8,7 @@ orbs:
 executors:
   nodejs:
     docker:
-      - image: cimg/node:18.16
+      - image: cimg/node:18.17
 
 jobs:
   test-lambda:
