@@ -42,7 +42,7 @@ repos:
         args:
           - --hook-config=--create-file-if-not-exist=true
   - repo: https://github.com/aquasecurity/tfsec
-    rev: v1.28.1
+    rev: v1.28.2
     hooks:
       - id: tfsec
         args:
