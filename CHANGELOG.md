@@ -1,3 +1,10 @@
+## [1.5.1](https://github.com/timo-reymann/terraform-module-aws-apigateway-swagger-ui/compare/1.5.0...1.5.1) (2023-09-20)
+
+
+### Bug Fixes
+
+* **deps:** update dependency swagger-ui-express to v5 ([#39](https://github.com/timo-reymann/terraform-module-aws-apigateway-swagger-ui/issues/39)) ([50ddea9](https://github.com/timo-reymann/terraform-module-aws-apigateway-swagger-ui/commit/50ddea90ac0f791fde8d4a1805a01b5ba489be2f))
+
 ## [1.5.0](https://github.com/timo-reymann/terraform-module-aws-apigateway-swagger-ui/compare/1.4.2...1.5.0) (2023-05-31)
 
 
