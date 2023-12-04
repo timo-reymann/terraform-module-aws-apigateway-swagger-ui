@@ -1,3 +1,10 @@
+## [1.5.2](https://github.com/timo-reymann/terraform-module-aws-apigateway-swagger-ui/compare/1.5.1...1.5.2) (2023-12-04)
+
+
+### Bug Fixes
+
+* Allow apigateways outside of eu-central-1 ([11efb67](https://github.com/timo-reymann/terraform-module-aws-apigateway-swagger-ui/commit/11efb671d776eb314460dd14e70ee627bb55ae6b)), closes [#64](https://github.com/timo-reymann/terraform-module-aws-apigateway-swagger-ui/issues/64)
+
 ## [1.5.1](https://github.com/timo-reymann/terraform-module-aws-apigateway-swagger-ui/compare/1.5.0...1.5.1) (2023-09-20)
 
 
