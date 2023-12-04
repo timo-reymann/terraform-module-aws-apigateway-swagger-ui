@@ -43,12 +43,14 @@ resource "aws_apigatewayv2_integration" "this" {
   integration_uri    = aws_lambda_function.this.invoke_arn
 }
 
+data "aws_region" "current" {}
+
 resource "aws_lambda_permission" "apigateway" {
   count = var.create_api_endpoints ? 1 : 0
 
   statement_id  = "AllowAPIGatewayInvoke"
   action        = "lambda:InvokeFunction"
   principal     = "apigateway.amazonaws.com"
-  source_arn    = "arn:aws:execute-api:eu-central-1:${data.aws_caller_identity.this.account_id}:${var.api_gateway_id}/*/*"
+  source_arn    = "arn:aws:execute-api:${data.aws_region.current.name}:${data.aws_caller_identity.this.account_id}:${var.api_gateway_id}/*/*"
   function_name = aws_lambda_function.this.function_name
 }
